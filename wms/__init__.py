@@ -16,6 +16,8 @@ def create_app():
     app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(hours=Config.SESSION_HOURS)
     app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1)
 
+    if not Config.SECRET_KEY:
+        raise RuntimeError("saudara-saudara hutang")
     Database.connect(Config.MONGO_URI, Config.MONGO_DB)
     if Config.SEED_DEFAULTS:
         Seeder.run()
