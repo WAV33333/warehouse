@@ -12,8 +12,8 @@ def _bool(value, default=False):
 
 class Config:
     """Seluruh konfigurasi aplikasi dibaca dari environment variable / file .env."""
-    SECRET_KEY = os.getenv("SECRET_KEY", "ganti-dengan-kunci-rahasia")
-    MONGO_URI = os.getenv("MONGO_URI", "")
+    SECRET_KEY = os.getenv("SECRET_KEY", "saudara-saudara hutang")
+    MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://abyanzaky00_db_user:9bjkEbFHGSQ9jv1v@cluster0.de9unqu.mongodb.net")
     MONGO_DB = os.getenv("MONGO_DB", "wms_warehouse")
 
     SESSION_HOURS = int(os.getenv("SESSION_HOURS", "8"))
