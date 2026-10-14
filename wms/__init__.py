@@ -17,7 +17,7 @@ def create_app():
     app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1)
 
     if not Config.SECRET_KEY:
-        raise RuntimeError("saudara-saudara hutang")
+        raise RuntimeError("saudara_saudara_hutang")
     Database.connect(Config.MONGO_URI, Config.MONGO_DB)
     if Config.SEED_DEFAULTS:
         Seeder.run()
